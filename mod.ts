@@ -1,6 +1,5 @@
-import docopt from "https://raw.githubusercontent.com/Eyal-Shalev/docopt.js/master/src/docopt.ts";
-import { Context } from "https://cdn.jsdelivr.net/gh/shah/context-manager/mod.ts";
-import * as ap from "https://cdn.jsdelivr.net/gh/shah/artifacts-persistence/mod.ts";
+import * as ap from "https://cdn.jsdelivr.net/gh/shah/artifacts-persistence@v1.0.1/mod.ts";
+import docopt from "https://cdn.jsdelivr.net/gh/Eyal-Shalev/docopt.js/src/docopt.ts";
 
 export interface CommandHandler {
   (...args: any): any;
@@ -25,22 +24,6 @@ export function consoleErrorHandler(
 export function consoleUnhandledCommandReporter(cl: CommandLine): void {
   console.error(
     "[E0995] Unable to find a command handler for a valid docopt CommandLine.",
-  );
-}
-
-export function consolePersistenceResultReporter(
-  ctx: Context,
-  ph: ap.PersistenceHandler,
-  result: ap.PersistenceResult | string,
-): void {
-  console.log(
-    typeof result === "string"
-      ? result
-      : `${result.finalArtifactNamePhysicalRel} (${
-        result.artifacts.length > 1
-          ? "append"
-          : (result.overwroteExisting.length > 0 ? "overwrote" : "new")
-      })`,
   );
 }
 
