@@ -1,5 +1,5 @@
-import * as ap from "https://cdn.jsdelivr.net/gh/shah/artifacts-persistence@v1.0.5/mod.ts";
-import docopt from "https://cdn.jsdelivr.net/gh/Eyal-Shalev/docopt.js/src/docopt.ts";
+import * as ap from "https://denopkg.com/shah/artifacts-persistence@v1.0.10/mod.ts";
+import docopt from "https://denopkg.com/Eyal-Shalev/docopt.js/src/docopt.ts";
 
 export interface CommandHandler {
   (...args: any): any;
